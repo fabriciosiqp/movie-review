@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210605173553_AddDirectorSeeding.cs" />
+    <Compile Remove="Migrations\20210605173553_AddDirectorSeeding.Designer.cs" />
+    <Compile Remove="Migrations\20210605173713_AddDirectorSeeding.cs" />
+    <Compile Remove="Migrations\20210605173713_AddDirectorSeeding.Designer.cs" />
+    <Compile Remove="Migrations\20210605174743_AddActorSeeding.cs" />
+    <Compile Remove="Migrations\20210605174743_AddActorSeeding.Designer.cs" />
+    <Compile Remove="Migrations\20210605181756_AddUserSeeding.cs" />
+    <Compile Remove="Migrations\20210605181756_AddUserSeeding.Designer.cs" />
+    <Compile Remove="Migrations\20210605182621_AddUserSeeding2.cs" />
+    <Compile Remove="Migrations\20210605182621_AddUserSeeding2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieReview.Application\MovieReview.Application.csproj" />
+    <ProjectReference Include="..\MovieReview.Domain\MovieReview.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

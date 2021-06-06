@@ -1,0 +1,26 @@
+version: '3.4'
+
+networks:
+  default:
+    name: dev_network
+    driver: bridge
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=DvZS13vyX
+    ports:
+      - "1433:1433"
+
+  moviereview.api:
+    image: ${DOCKER_REGISTRY-}moviereviewapi
+    restart: always
+    ports:
+      - "80:80"
+    build:
+      context: .
+      dockerfile: src/MovieReview.API/Dockerfile
+    depends_on:
+      - db 
